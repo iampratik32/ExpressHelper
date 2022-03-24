@@ -1,5 +1,7 @@
 #!/bin/bash
-source ./utility.sh
+d1=$(readlink -f "$0")
+dir=${d1::-7 }
+. "${dir}utility.sh"
 
 function createModel(){
     validName $1 "Model"
@@ -26,10 +28,10 @@ function handleParams(){
 
 function checkParam(){
     if [[ $1 == "c" ]]; then
-        source ./controller.sh
+    . "${dir}controller.sh"
         createController "${2}Controller"
     elif [[ $1 == "v" ]]; then
-        source ./validator.sh
+    . "${dir}validator.sh"
         createValidator "${2}Validator"
     fi
 }

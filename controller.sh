@@ -1,7 +1,9 @@
 #!/bin/bash
-source ./utility.sh
+d1=$(readlink -f "$0")
+dir=${d1::-7 }
+. "${dir}utility.sh"
 
-function createController (){
+function createController (){    
     validName $1 "Controller"
     cName="/src/controllers"
     name="$PWD$cName"

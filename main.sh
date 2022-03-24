@@ -1,18 +1,25 @@
 #!/bin/bash
+d1=$(readlink -f "$0")
+dir=${d1::-7 }
 
 function model(){
-    source ./model.sh
+    . "${dir}model.sh"
     createModel $1 $2
 }
 
 function controller(){
-    source ./controller.sh
+    . "${dir}controller.sh"
     createController $1
 }
 
 function validator(){
-    source ./validator.sh
+    . "${dir}validator.sh"
     createValidator $1
+}
+
+function route(){
+    . "${dir}route.sh"
+    createRoute $1
 }
 
 function remove(){

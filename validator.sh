@@ -1,5 +1,7 @@
 #!/bin/bash
-source ./utility.sh
+d1=$(readlink -f "$0")
+dir=${d1::-7 }
+. "${dir}utility.sh"
 
 function createValidator (){
     validName $1 "Validator"
