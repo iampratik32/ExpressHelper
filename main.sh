@@ -1,5 +1,15 @@
 #!/bin/bash
 
+function model(){
+    source ./model.sh
+    createModel $1 $2
+}
+
+function controller(){
+    source ./controller.sh
+    createController $1
+}
+
 function remove(){
     src="$PWD/src"
     node="$PWD/node_modules"
@@ -16,7 +26,7 @@ function init(){
     if [ ! -d $src ]; then
         npm init
         mkdir -p $src
-        folders=("config" "controllers" "models" "routes" "utilities")
+        folders=("config" "controllers" "models" "routes" "utilities" "validators")
         for fo in ${folders[@]}; do
             folder $fo
         done
@@ -121,7 +131,7 @@ function readAll(){
     echo "Enter Your Required Packages"
     read all
     npm i $all
-    echo "Enter Your Devlopment Packages"
+    echo "Enter Your Development Packages"
     read all2
     npm i $all2 -D
 }
