@@ -16,7 +16,7 @@ function checkFile(){
 
 function checkFolder(){
     if [ ! -d "$1" ]; then
-        echo "src/$2 Folder Does Not Exist"
+        echo "$2 Folder Does Not Exist"
         exit   
     fi
 }

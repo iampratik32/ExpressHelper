@@ -3,8 +3,9 @@ source ./utility.sh
 
 function createController (){
     validName $1 "Controller"
-    name="$PWD/src/controllers/"
-    checkFolder $name "controllers"
+    cName="/src/controllers"
+    name="$PWD$cName"
+    checkFolder $name $cName
     file="$name/$1.js"
     checkFile $1 $file
     

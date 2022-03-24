@@ -10,6 +10,11 @@ function controller(){
     createController $1
 }
 
+function validator(){
+    source ./validator.sh
+    createValidator $1
+}
+
 function remove(){
     src="$PWD/src"
     node="$PWD/node_modules"
@@ -26,7 +31,7 @@ function init(){
     if [ ! -d $src ]; then
         npm init
         mkdir -p $src
-        folders=("config" "controllers" "models" "routes" "utilities" "validators")
+        folders=("config" "controllers" "models" "routes" "utilities" "middleware/validators")
         for fo in ${folders[@]}; do
             folder $fo
         done
