@@ -9,7 +9,7 @@ function model(){
 
 function controller(){
     . "${dir}controller.sh"
-    createController $1
+    createController $1 $2
 }
 
 function validator(){
