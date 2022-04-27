@@ -38,7 +38,7 @@ function init(){
     if [ ! -d $src ]; then
         npm init
         mkdir -p $src
-        folders=("config" "controllers" "models" "routes" "utilities" "middleware/validators")
+        folders=("config" "controllers" "models" "routes" "utilities" "middlewares/validators")
         for fo in ${folders[@]}; do
             folder $fo
         done

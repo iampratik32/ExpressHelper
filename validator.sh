@@ -5,7 +5,7 @@ dir=${d1::-7 }
 
 function createValidator (){
     validName $1 "Validator"
-    cName="/src/middleware/validators"
+    cName="/src/middlewares/validators"
     name="$PWD$cName"
     checkFolder $name $cName
     file="$name/$1.js"

@@ -9,7 +9,7 @@ function createController (){
     name="$PWD$cName"
     checkFolder $name $cName
     file="$name/$1.js"
-    checkFile $1 $file
+    checkFile $1 $filec
     handleParams $2 $file
 }
 
@@ -24,10 +24,10 @@ function handleParams(){
         else
             fun=("index")
         fi
-        writeFile $fun $2
+        writeFile $fun
     else
         fun=("index")
-        writeFile $fun $2
+        writeFile $fun
     fi
 }
 
@@ -36,7 +36,7 @@ function writeFile (){
     everything=()
     for fo in ${fun[@]}; do
         element="exports.$fo-=-async-(req,-res)-=>-{}"
-        everything+=(`echo $element`)
+        everything+=($element)
     done    
     
     cat <<-EOF > $file
